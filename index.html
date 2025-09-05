@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" aria-label="Todo List App">
+    <header>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 11l3 3L22 4" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <h1>Todo List</h1>
+    </header>
+
+    <section class="new-todo" aria-label="Add new todo">
+      <input id="newInput" type="text" placeholder="What needs doing? (Press Enter)" aria-label="New todo text" />
+      <button id="addBtn" class="primary" aria-label="Add todo">Add</button>
+    </section>
+
+    <section class="toolbar" aria-label="Tools">
+      <div class="filters" role="tablist" aria-label="Filters">
+        <button data-filter="all" class="active" role="tab" aria-selected="true">All</button>
+        <button data-filter="active" role="tab" aria-selected="false">Active</button>
+        <button data-filter="completed" role="tab" aria-selected="false">Completed</button>
+      </div>
+      <div class="badge" id="counter" aria-live="polite">0 items</div>
+    </section>
+
+    <ul id="list" aria-label="Todo items"></ul>
+
+    <footer>
+      <span class="muted">Tip: double-click a title to edit</span>
+      <button id="clearCompleted" aria-label="Clear completed">Clear completed</button>
+    </footer>
+  </main>
+
+  <!-- ✅ load script at the end -->
+  <script src="app.js"></script>
+</body>
+</html>
